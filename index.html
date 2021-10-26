@@ -1,3 +1,72 @@
+SELECT DISTINCT state 
+FROM customers
+
+SELECT name, unit_price, unit_price * 2 AS new_price
+FROM products
+
+// WHERE
+<> este !=
+SELECT * FROM `customers` WHERE points>3000
+
+SELECT * FROM `customers` WHERE state = "VA"
+
+SELECT * FROM `customers` WHERE state <> 'va'
+
+SELECT * FROM `customers` WHERE state != 'va'
+
+SELECT * FROM `customers` WHERE birth_date > '1985-01-01' && birth_date < '1991-01-01'
+
+SELECT * FROM `order_items` WHERE order_id=6 && (unit_price *quantity) > 30
+
+SELECT * FROM `customers` WHERE state IN ('RO','VA')  
+
+SELECT * FROM `customers` WHERE state NOT IN ('RO', 'VA')
+
+SELECT * FROM `products` WHERE quantity_in_stock IN ('49', '38', '72');
+SELECT * FROM `products` WHERE quantity_in_stock IN (49, 38, 72);  
+
+SELECT * FROM `customers` WHERE points BETWEEN 1000 AND 3000
+
+SELECT * FROM `customers` WHERE birth_date BETWEEN '1990-01-01' AND '2000-01-01' 
+
+
+SELECT * FROM `customers` WHERE last_name LIKE 'b%'; - incepe cu b
+
+SELECT * FROM `customers` WHERE address LIKE 'avenue' && phone LIKE '%9'; 
+
+SELECT * FROM `customers` WHERE address LIKE '%trail%' OR address LIKE '%avenue%'
+
+
+SELECT * FROM `customers` WHERE last_name REGEXP '^field|mac|rose'
+last_name start with 'field' or it should have the word 'mac' or 'rose' in it 
+
+SELECT * FROM `customers` WHERE last_name REGEXP 'field$|mac|rose'
+ 
+SELECT * FROM `customers` WHERE last_name REGEXP '[gim]e'
+show last name that has ge, ie, me in it
+
+SELECT * FROM `customers` WHERE last_name REGEXP '[a-h]e'
+ae, be, ce, ... he
+
+-- ^ beginning 
+-- $ end
+-- | or
+-- [abcd] any character lsited in the brackets
+-- [a-h] any character in that range
+
+
+SELECT * FROM `customers` WHERE first_name REGEXP 'ELKA|AMBUR'
+
+SELECT * FROM `customers` WHERE last_name REGEXP 'ey$|on$'
+
+SELECT * FROM `customers` WHERE last_name REGEXP '^MY|SE'
+
+SELECT * FROM `customers` WHERE last_name REGEXP 'b[ru]'
+SELECT * FROM `customers` WHERE last_name REGEXP 'br|bu'
+
+SELECT * FROM `customers` WHERE phone IS NULL
+SELECT * FROM `customers` WHERE phone IS NOT NULL
+
 SELECT * FROM `customers` WHERE phone IS NULL
 
 SELECT * FROM `customers` WHERE phone IS NOT NULL
